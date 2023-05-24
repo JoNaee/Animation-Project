@@ -1,0 +1,29 @@
+import simplegui
+
+# Create Global Variable
+x = 37
+
+
+
+def draw_handler(canvas):
+    global x
+    x=x+6
+    
+    canvas.draw_polygon([(0, 300), (600, 300), (600, 600), (0, 600)], 2, "white", "black")
+    canvas.draw_polygon([(x+400, 300),(x+400,200),(x,200),(x, 300)], 2, "#2A81E2", "#31A2F5")
+    canvas.draw_circle((x+100 , 300), 25,5, "black")
+    # canvas.draw_circle((x, 300), 25, 5, "lightblue")
+    # canvas.draw_circle((x+200 , 300), 25, 5, "lightblue")
+    canvas.draw_circle((x+300, 300), 25, 5, "black")
+    canvas.draw_line((550,150),(550,90),5,"Black")
+    canvas.draw_line((550, 150), (0,0),5,"brown")
+    canvas.draw_line((0,0),(0,0),5,"brown")
+    canvas.draw_polygon([(460,90),(490,60),(520,60),(550,90),(550,120),(520,120),(490,90)],5,"black")
+    #for i in range
+    
+    
+
+frame = simplegui.create_frame('Testing', 600, 600)
+frame.set_canvas_background("lightblue")
+frame.set_draw_handler(draw_handler)
+frame.start()
